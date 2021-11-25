@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                TextField(controller: user, autofocus: true, keyboardType: TextInputType.number, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.supervised_user_circle), labelText: "Usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
+                TextField(controller: user, autofocus: true, keyboardType: TextInputType.text, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.supervised_user_circle), labelText: "Usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
                 Divider(),
                 TextField(controller: pass, autofocus: true, obscureText: true, keyboardType: TextInputType.text, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.password), labelText: "Senha do usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
                 Divider(),
