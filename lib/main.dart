@@ -40,7 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 Divider(),
                 TextField(autofocus: true, obscureText: true, keyboardType: TextInputType.text, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.password), labelText: "Senha do usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
                 Divider(),
-                Divider(),
                 FlatButton(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0.0), side: BorderSide(color: Colors.white)),
                   color: Colors.grey,
