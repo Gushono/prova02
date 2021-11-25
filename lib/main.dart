@@ -5,11 +5,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  Future<FirebaseApp> _initializeFirebase() async {
-    FirebaseApp firebaseApp = await Firebase.initializeApp();
-    return firebaseApp;
-  }
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -25,13 +20,14 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController user = TextEditingController();
+  TextEditingController pass = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,18 +39,19 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                TextField(autofocus: true, keyboardType: TextInputType.number, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.supervised_user_circle), labelText: "Usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
+                TextField(controller: user, autofocus: true, keyboardType: TextInputType.text, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.supervised_user_circle), labelText: "Usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
                 Divider(),
-                TextField(autofocus: true, obscureText: true, keyboardType: TextInputType.text, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.password), labelText: "Senha do usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
-                Divider(),
+                TextField(controller: pass, autofocus: true, obscureText: true, keyboardType: TextInputType.text, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.password), labelText: "Senha do usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
                 Divider(),
                 FlatButton(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0.0), side: BorderSide(color: Colors.white)),
                   color: Colors.grey,
                   textColor: Colors.black,
                   padding: EdgeInsets.all(30.0),
-                  onPressed: () => {
-                    print('Chamar login aqui')
+                  onPressed: () {
+                    print('Chamar login aqui');
+                    print('\nEsse é o user ' + user.text);
+                    print('Esse é o pass ' + pass.text);
                   },
                   child: Text(
                     "ENTRAR".toUpperCase(),
