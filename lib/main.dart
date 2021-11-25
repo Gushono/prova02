@@ -25,7 +25,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   TextEditingController user = TextEditingController();
   TextEditingController pass = TextEditingController();
 
@@ -50,9 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   textColor: Colors.black,
                   padding: EdgeInsets.all(30.0),
                   onPressed: () {
-                    print('Chamar login aqui')
-                    print('a', user)
-                    print(pass)
+                    print('Chamar login aqui');
+                    print('a', user);
+                    print(pass);
                   },
                   child: Text(
                     "ENTRAR".toUpperCase(),
