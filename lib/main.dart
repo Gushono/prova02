@@ -5,11 +5,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  Future<FirebaseApp> _initializeFirebase() async {
-    FirebaseApp firebaseApp = await Firebase.initializeApp();
-    return firebaseApp;
-  }
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -25,8 +20,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
