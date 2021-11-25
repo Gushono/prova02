@@ -49,9 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.grey,
                   textColor: Colors.black,
                   padding: EdgeInsets.all(30.0),
-                  onPressed: () => {
+                  onPressed: () {
                     print('Chamar login aqui')
-                    print(user)
+                    print('a', user)
                     print(pass)
                   },
                   child: Text(
