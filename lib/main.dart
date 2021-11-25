@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: EdgeInsets.all(30.0),
                   onPressed: () {
                     print('Chamar login aqui');
-                    print('a', user);
+                    print('a' + user);
                     print(pass);
                   },
                   child: Text(
