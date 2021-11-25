@@ -25,6 +25,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  TextEditingController user = TextEditingController();
+  TextEditingController pass = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,9 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                TextField(autofocus: true, keyboardType: TextInputType.number, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.supervised_user_circle), labelText: "Usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
+                TextField(controller: user, autofocus: true, keyboardType: TextInputType.number, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.supervised_user_circle), labelText: "Usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
                 Divider(),
-                TextField(autofocus: true, obscureText: true, keyboardType: TextInputType.text, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.password), labelText: "Senha do usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
+                TextField(controller: pass, autofocus: true, obscureText: true, keyboardType: TextInputType.text, style: TextStyle(color: Colors.blue, fontSize: 20), decoration: InputDecoration(prefixIcon: Icon(Icons.password), labelText: "Senha do usuário", labelStyle: TextStyle(color: Colors.black), fillColor: Colors.white, filled: true)),
                 Divider(),
                 FlatButton(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0.0), side: BorderSide(color: Colors.white)),
@@ -47,6 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: EdgeInsets.all(30.0),
                   onPressed: () => {
                     print('Chamar login aqui')
+                    print(user)
+                    print(pass)
                   },
                   child: Text(
                     "ENTRAR".toUpperCase(),
